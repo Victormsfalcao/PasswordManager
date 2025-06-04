@@ -1,4 +1,4 @@
-package security;
+package src.security;
 
 import org.apache.commons.codec.binary.Base32;
 import javax.crypto.Mac;

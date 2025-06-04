@@ -52,7 +52,7 @@ Gerenciador de senhas simples e seguro, desenvolvido em Java. Permite armazenar 
 Compile o projeto usando:
 
 ```bash
-javac -cp ".;lib/*" -d bin src\Main.java src\controller\*.java src\db\*.java src\model\*.java src\security\*.java src\utils\*.java
+javac -cp ".;lib/*" -d bin src\Main.java src\src.controller\*.java src\src.db\*.java src\src.model\*.java src\src.security\*.java src\src.utils\*.java
 ```
 
 ### Executar
@@ -75,11 +75,11 @@ Na execução, use a opção de verificar se uma senha está comprometida. Teste
 
 * `src/` — Código-fonte Java organizado por pacotes:
 
-    * `controller` — Lógica de controle das credenciais e autenticação
-    * `db` — Helper de conexão e inicialização do banco SQLite
-    * `model` — Classes modelo, como `Credential`
-    * `security` — Criptografia e 2FA
-    * `utils` — Utilitários diversos, como verificação de vazamento
+    * `src.controller` — Lógica de controle das credenciais e autenticação
+    * `src.db` — Helper de conexão e inicialização do banco SQLite
+    * `src.model` — Classes modelo, como `Credential`
+    * `src.security` — Criptografia e 2FA
+    * `src.utils` — Utilitários diversos, como verificação de vazamento
 
 * `lib/` — Bibliotecas externas necessárias
 
@@ -157,7 +157,7 @@ Gerenciador de senhas simples e seguro, desenvolvido em Java. Permite armazenar 
 Compile o projeto usando:
 
 ```bash
-javac -cp ".;lib/*" -d bin src\\Main.java src\\controller\\*.java src\\db\\*.java src\\model\\*.java src\\security\\*.java src\\utils\\*.java
+javac -cp ".;lib/*" -d bin src\\Main.java src\\src.controller\\*.java src\\src.db\\*.java src\\src.model\\*.java src\\src.security\\*.java src\\src.utils\\*.java
 ```
 
 ### Executar
@@ -180,11 +180,11 @@ Na execução, use a opção de verificar se uma senha está comprometida. Teste
 
 * `src/` — Código-fonte Java organizado por pacotes:
 
-    * `controller` — Lógica de controle das credenciais e autenticação
-    * `db` — Helper de conexão e inicialização do banco SQLite
-    * `model` — Classes modelo, como `Credential`
-    * `security` — Criptografia e 2FA
-    * `utils` — Utilitários diversos, como verificação de vazamento
+    * `src.controller` — Lógica de controle das credenciais e autenticação
+    * `src.db` — Helper de conexão e inicialização do banco SQLite
+    * `src.model` — Classes modelo, como `Credential`
+    * `src.security` — Criptografia e 2FA
+    * `src.utils` — Utilitários diversos, como verificação de vazamento
 
 * `lib/` — Bibliotecas externas necessárias
 

@@ -1,4 +1,4 @@
-package controller;
+package src.controller;
 
 import java.security.SecureRandom;
 

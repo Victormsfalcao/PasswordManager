@@ -1,5 +1,5 @@
-package controller;
-import security.TwoFactorAuth;
+package src.controller;
+import src.security.TwoFactorAuth;
 import java.util.Scanner;
 
 public class AuthController {

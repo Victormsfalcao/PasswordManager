@@ -1,9 +1,9 @@
-controller\AuthController.java
-controller\CredentialController.java
-controller\PasswordGenerator.java
-db\DatabaseHelper.java
-model\Credential.java
-security\EncryptionUtils.java
-security\TwoFactorAuth.java
-utils\BreachChecker.java
+src.controller\AuthController.java
+src.controller\CredentialController.java
+src.controller\PasswordGenerator.java
+src.db\DatabaseHelper.java
+src.model\Credential.java
+src.security\EncryptionUtils.java
+src.security\TwoFactorAuth.java
+src.utils\BreachChecker.java
 src\Main.java

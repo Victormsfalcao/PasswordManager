@@ -1,6 +1,6 @@
 package src;
 
-import utils.BreachChecker;
+import src.utils.BreachChecker;
 import java.util.Scanner;
 
 public class BreachCheckerTest {

@@ -1,9 +1,9 @@
 package src;
 
-import controller.AuthController;
-import controller.CredentialController;
-import controller.PasswordGenerator;
-import db.DatabaseHelper;
+import src.controller.AuthController;
+import src.controller.CredentialController;
+import src.controller.PasswordGenerator;
+import src.db.DatabaseHelper;
 
 import java.util.Scanner;
 

@@ -1,8 +1,8 @@
-package controller;
+package src.controller;
 
-import db.DatabaseHelper;
-import security.EncryptionUtils;
-import utils.BreachChecker;
+import src.db.DatabaseHelper;
+import src.security.EncryptionUtils;
+import src.utils.BreachChecker;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
