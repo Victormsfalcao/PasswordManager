@@ -49,8 +49,7 @@ Gerenciador de senhas simples e seguro, desenvolvido em Java. Permite armazenar 
 Compile o projeto usando:
 
 ```bash
-javac -cp ".;lib/*" -d bin src\Main.java src\src.controller\*.java src\src.db\*.java src\src.model\*.java src\src.security\*.java src\src.utils\*.java
-```
+javac -cp ".;lib/*" -d bin @sources.txt```
 
 ### Executar
 
