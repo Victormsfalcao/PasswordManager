@@ -88,7 +88,7 @@ Na execução, use a opção de verificar se uma senha está comprometida. Teste
 Contribuições são bem-vindas! Abra issues para bugs ou novas funcionalidades, e faça pull requests.
 
 ## Autor
-Victor Falcão
+* Victor Falcão
 ---
 
 ## Licença
