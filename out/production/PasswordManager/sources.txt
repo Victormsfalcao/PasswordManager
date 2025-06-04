@@ -1,0 +1,9 @@
+C:\Users\victo\Downloads\PasswordManager_Complete\controller\AuthController.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\controller\CredentialController.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\controller\PasswordGenerator.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\db\DatabaseHelper.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\model\Credential.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\security\EncryptionUtils.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\security\TwoFactorAuth.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\src\Main.java 
+C:\Users\victo\Downloads\PasswordManager_Complete\utils\BreachChecker.java 
