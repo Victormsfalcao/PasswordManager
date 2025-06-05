@@ -1,99 +1,125 @@
-
-````markdown
 # Password Manager
 
-Gerenciador de senhas simples e seguro, desenvolvido em Java. Permite armazenar credenciais (serviço, usuário, senha) com criptografia, autenticação de dois fatores (2FA) via TOTP e verificação de vazamento de senhas usando APIs externas.
+Gerenciador de senhas seguro desenvolvido em Java. Oferece armazenamento criptografado de credenciais com múltiplas camadas de segurança, incluindo autenticação de dois fatores (2FA), verificação de vazamentos e criptografia AES-GCM.
 
----
+## 🔐 Funcionalidades
 
-## Funcionalidades
+### Segurança
+- **Criptografia AES-GCM** para todas as senhas armazenadas
+- **Autenticação de dois fatores (2FA)** via Google Authenticator
+- **Verificação de vazamentos** usando a API do Have I Been Pwned
+- **Senha mestra** para acesso ao sistema
+- **Proteção contra remoção acidental** de credenciais
 
-- Cadastro de credenciais com criptografia AES das senhas.
-- Listagem das credenciais com senha descriptografada.
-- Autenticação de dois fatores (2FA) baseada em TOTP para aumentar a segurança.
-- Verificação se uma senha já foi exposta em vazamentos públicos.
-- Banco de dados SQLite para armazenamento local.
+### Gerenciamento de Credenciais
+- Adicionar novas credenciais (serviço, usuário, senha)
+- Listar credenciais com senhas criptografadas
+- Remover credenciais com autenticação dupla
+- Gerador de senhas seguras
 
----
+### Banco de Dados
+- SQLite local para armazenamento seguro
+- Estrutura otimizada para credenciais
+- Backup automático do banco de dados
 
-## Tecnologias e Bibliotecas
+## 🛠️ Tecnologias
 
 - Java 17+
 - SQLite (via `sqlite-jdbc`)
-- Apache Commons Codec (para manipulação Base32)
-- OTP-Java (TOTP - Time-Based One-Time Password)
-- JDBC para conexão com banco SQLite
+- Apache Commons Codec (Base32 para 2FA)
+- Criptografia AES-GCM
+- API Have I Been Pwned
 
----
+## 📦 Instalação
 
-## Como usar
+### Pré-requisitos
+- JDK 17 ou superior
+- Git (opcional)
 
-### Preparação
+### Configuração
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seuusuario/password-manager.git
-   cd password-manager
-````
-
-2. Certifique-se de ter o JDK instalado (Java 17 ou superior).
-
-3. Baixe as dependências no diretório `lib/`:
-
-    * `sqlite-jdbc-3.36.0.3.jar`
-    * `commons-codec-1.15.jar`
-    * `otp-java-1.3.0.jar`
-
-### Compilar
-
-Compile o projeto usando:
-
+1. Clone o repositório ou baixe o código:
 ```bash
-javac -cp ".;lib/*" -d bin @sources.txt```
+git clone https://github.com/seuusuario/password-manager.git
+cd password-manager
+```
 
-### Executar
+2. Certifique-se de ter as dependências no diretório `lib/`:
+- `sqlite-jdbc-3.36.0.3.jar`
+- `commons-codec-1.15.jar`
 
-Execute o programa com:
+### Compilação
+```bash
+javac -cp ".;lib/*" -d bin @sources.txt
+```
 
+### Execução
 ```bash
 java -cp ".;bin;lib/*" src.Main
 ```
 
----
+## 🔒 Primeira Execução
 
-## Testar verificação de vazamento
+1. Configure sua senha mestra (mínimo 8 caracteres)
+2. Configure o Google Authenticator com o código QR fornecido
+3. Guarde sua senha mestra em local seguro
 
-Na execução, use a opção de verificar se uma senha está comprometida. Teste com senhas comuns para ver a resposta.
+## 🎯 Uso
 
----
+### Menu Principal
+1. **Adicionar credencial**
+   - Cadastre novas senhas com serviço e usuário
+   - Senhas são automaticamente criptografadas
 
-## Estrutura do projeto
+2. **Listar credenciais**
+   - Visualize todas as credenciais salvas
+   - Senhas são mostradas em formato criptografado
 
-* `src/` — Código-fonte Java organizado por pacotes:
+3. **Remover credencial**
+   - Requer senha mestra
+   - Requer código 2FA
+   - Confirmação dupla para evitar remoções acidentais
 
-    * `src.controller` — Lógica de controle das credenciais e autenticação
-    * `src.db` — Helper de conexão e inicialização do banco SQLite
-    * `src.model` — Classes modelo, como `Credential`
-    * `src.security` — Criptografia e 2FA
-    * `src.utils` — Utilitários diversos, como verificação de vazamento
+4. **Gerar senha segura**
+   - Cria senhas fortes automaticamente
+   - Combina letras, números e símbolos
 
-* `lib/` — Bibliotecas externas necessárias
+5. **Verificar vazamento de senha**
+   - Verifica se uma senha já vazou
+   - Usa API segura do Have I Been Pwned
+   - Não envia a senha completa para verificação
 
-* `bin/` — Código compilado
+## 🔐 Segurança
 
----
+### Criptografia
+- Algoritmo: AES-GCM
+- Chaves derivadas com PBKDF2
+- Salt único por senha
+- Vetores de inicialização (IV) aleatórios
 
-## Contribuição
+### Autenticação
+- Senha mestra com hash seguro
+- 2FA via Google Authenticator
+- Proteção contra tentativas repetidas
 
-Contribuições são bem-vindas! Abra issues para bugs ou novas funcionalidades, e faça pull requests.
+### Armazenamento
+- Senhas nunca são salvas em texto puro
+- Banco de dados local criptografado
+- Sem envio de dados para servidores externos
 
-## Autor
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para:
+- Reportar bugs
+- Sugerir novas funcionalidades
+- Enviar pull requests
+
+## 👤 Autor
 * Victor Falcão
----
 
-## Licença
+## 📝 Licença
 
-MIT License — sinta-se livre para usar, modificar e distribuir.
+MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 
 

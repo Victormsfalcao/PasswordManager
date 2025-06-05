@@ -1,11 +1,10 @@
 package src;
 
+import java.util.Scanner;
 import src.controller.AuthController;
 import src.controller.CredentialController;
 import src.controller.PasswordGenerator;
 import src.db.DatabaseHelper;
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,8 +20,9 @@ public class Main {
             System.out.println("\nMenu:");
             System.out.println("1. Adicionar credencial");
             System.out.println("2. Listar credenciais");
-            System.out.println("3. Gerar senha segura");
-            System.out.println("4. Verificar vazamento de senha");
+            System.out.println("3. Remover credencial");
+            System.out.println("4. Gerar senha segura");
+            System.out.println("5. Verificar vazamento de senha");
             System.out.println("0. Sair");
             System.out.print("Escolha: ");
             String choice = scanner.nextLine();
@@ -34,9 +34,12 @@ public class Main {
                     credentialController.listCredentials();
                     break;
                 case "3":
-                    System.out.println("Senha gerada: " + PasswordGenerator.generate(16));
+                    credentialController.removeCredential();
                     break;
                 case "4":
+                    System.out.println("Senha gerada: " + PasswordGenerator.generate(16));
+                    break;
+                case "5":
                     credentialController.checkBreach();
                     break;
                 case "0":
