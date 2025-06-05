@@ -41,7 +41,7 @@ Gerenciador de senhas seguro desenvolvido em Java. Oferece armazenamento criptog
 
 1. Clone o repositório ou baixe o código:
 ```bash
-git clone https://github.com/seuusuario/password-manager.git
+git clone https://github.com/Victormsfalcao/PasswordManager.git
 cd password-manager
 ```
 
