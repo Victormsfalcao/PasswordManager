@@ -30,35 +30,59 @@ Gerenciador de senhas seguro desenvolvido em Java. Oferece armazenamento criptog
 - Criptografia AES-GCM
 - API Have I Been Pwned
 
-## 📦 Instalação
+## 📦 Instalação e Execução
 
-### Pré-requisitos
-- JDK 17 ou superior
-- Git (opcional)
-- Google Authenticator no celular
+### Pré-requisitos Obrigatórios
+- JDK 17 ou superior instalado
+  - Para verificar, abra o terminal/cmd e digite: `java -version`
+  - Deve mostrar versão 17 ou superior
+- Google Authenticator no celular (ou outro app 2FA compatível)
 
-### Configuração
+### Como Executar (Forma Simples)
 
-1. Clone o repositório ou baixe o código:
-```bash
-git clone https://github.com/seuusuario/password-manager.git
-cd password-manager
+#### Windows:
+1. Extraia o arquivo ZIP em uma pasta
+2. Dê duplo clique no arquivo `run.bat`
+3. Siga as instruções na tela
+
+#### Linux/Mac:
+1. Extraia o arquivo ZIP em uma pasta
+2. Abra o terminal na pasta do projeto
+3. Execute: `chmod +x run.sh`
+4. Execute: `./run.sh`
+5. Siga as instruções na tela
+
+### Estrutura de Arquivos Necessária
+```
+password-manager/
+├── lib/                    # Bibliotecas (não mexer)
+│   ├── sqlite-jdbc-3.36.0.3.jar
+│   ├── commons-codec-1.15.jar
+│   └── otp-java-1.3.0.jar
+├── src/                    # Código fonte
+├── run.bat                 # Script para Windows
+├── run.sh                  # Script para Linux/Mac
+└── README.md              
 ```
 
-2. Certifique-se de ter as dependências no diretório `lib/`:
-- `sqlite-jdbc-3.36.0.3.jar`
-- `commons-codec-1.15.jar`
-- `otp-java-1.3.0.jar`
+### Problemas Comuns
 
-### Compilação
-```bash
-javac -cp ".;lib/*" -d bin @sources.txt
-```
+1. **Erro "java não é reconhecido"**:
+   - O Java não está instalado ou não está no PATH
+   - Solução: Instale o JDK 17 ou superior
 
-### Execução
-```bash
-java -cp ".;bin;lib/*" src.Main
-```
+2. **Erro de compilação**:
+   - Verifique se todos os arquivos da pasta `lib` estão presentes
+   - Verifique se está usando Java 17 ou superior
+
+3. **Banco de dados não inicializa**:
+   - Verifique se tem permissão de escrita na pasta
+   - Tente executar como administrador
+
+### Observações Importantes
+- Na primeira execução, o programa criará automaticamente o banco de dados
+- Guarde sua senha mestra e backup do 2FA em local seguro
+- Não delete ou mova os arquivos da pasta `lib`
 
 ## 🔒 Primeira Execução
 
