@@ -35,6 +35,7 @@ Gerenciador de senhas seguro desenvolvido em Java. Oferece armazenamento criptog
 ### Pré-requisitos
 - JDK 17 ou superior
 - Git (opcional)
+- Google Authenticator no celular
 
 ### Configuração
 
@@ -47,6 +48,7 @@ cd password-manager
 2. Certifique-se de ter as dependências no diretório `lib/`:
 - `sqlite-jdbc-3.36.0.3.jar`
 - `commons-codec-1.15.jar`
+- `otp-java-1.3.0.jar`
 
 ### Compilação
 ```bash
@@ -60,9 +62,25 @@ java -cp ".;bin;lib/*" src.Main
 
 ## 🔒 Primeira Execução
 
-1. Configure sua senha mestra (mínimo 8 caracteres)
-2. Configure o Google Authenticator com o código QR fornecido
-3. Guarde sua senha mestra em local seguro
+### 1. Configuração da Senha Mestra
+- Digite uma senha mestra forte (mínimo 8 caracteres)
+- Esta senha será necessária para acessar suas credenciais
+- Guarde-a em local seguro - não há recuperação!
+
+### 2. Configuração do Google Authenticator
+- Instale o Google Authenticator no seu celular
+- Ao executar o programa pela primeira vez, você verá:
+  1. Um link para gerar QR code
+  2. A chave secreta para digitação manual
+  3. Instruções passo a passo para configuração
+- Você precisará confirmar a configuração digitando um código
+- ⚠️ Guarde o backup dos códigos 2FA em local seguro!
+
+### 3. Teste Inicial
+- Após a configuração, o sistema pedirá:
+  1. Sua senha mestra
+  2. Um código do Google Authenticator
+- Se tudo estiver correto, você verá o menu principal
 
 ## 🎯 Uso
 
@@ -106,6 +124,13 @@ java -cp ".;bin;lib/*" src.Main
 - Senhas nunca são salvas em texto puro
 - Banco de dados local criptografado
 - Sem envio de dados para servidores externos
+
+### Dicas de Segurança
+1. Use uma senha mestra forte e única
+2. Mantenha backup do Google Authenticator
+3. Não compartilhe sua senha mestra
+4. Faça backup regular do banco de dados
+5. Mantenha o sistema atualizado
 
 ## 🤝 Contribuição
 

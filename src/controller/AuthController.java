@@ -4,10 +4,12 @@ import java.util.Base64;
 import java.util.Scanner;
 import java.util.prefs.Preferences;
 import src.security.TwoFactorAuth;
+import src.security.TwoFactorSetup;
 
 public class AuthController {
     private Scanner scanner;
     private static final String MASTER_HASH_KEY = "master_password_hash";
+    private static final String TWO_FA_CONFIGURED_KEY = "2fa_configured";
     private Preferences prefs;
 
     public AuthController(Scanner scanner) {
@@ -28,6 +30,10 @@ public class AuthController {
 
     private boolean isMasterPasswordSet() {
         return prefs.get(MASTER_HASH_KEY, null) != null;
+    }
+
+    private boolean is2FAConfigured() {
+        return prefs.getBoolean(TWO_FA_CONFIGURED_KEY, false);
     }
 
     private void setMasterPassword() {
@@ -57,9 +63,27 @@ public class AuthController {
         }
     }
 
+    private void setup2FA() {
+        if (!is2FAConfigured()) {
+            TwoFactorSetup.showSetupInstructions();
+            while (true) {
+                System.out.print("Digite o código para confirmar a configuração: ");
+                String code = scanner.nextLine();
+                if (TwoFactorAuth.verifyCode(TwoFactorSetup.getSecretKey(), code)) {
+                    prefs.putBoolean(TWO_FA_CONFIGURED_KEY, true);
+                    System.out.println("✅ Google Authenticator configurado com sucesso!");
+                    break;
+                } else {
+                    System.out.println("❌ Código inválido! Tente novamente.");
+                }
+            }
+        }
+    }
+
     public String getMasterPassword() {
         if (!isMasterPasswordSet()) {
             setMasterPassword();
+            setup2FA();
         }
 
         System.out.print("Digite a senha mestra: ");
@@ -83,7 +107,7 @@ public class AuthController {
         System.out.print("Digite o código 2FA do Google Authenticator: ");
         String code = scanner.nextLine();
 
-        if (!TwoFactorAuth.verifyCode("JBSWY3DPEHPK3PXP", code)) {
+        if (!TwoFactorAuth.verifyCode(TwoFactorSetup.getSecretKey(), code)) {
             System.out.println("Código 2FA inválido.");
             return false;
         }
