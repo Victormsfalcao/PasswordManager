@@ -38,15 +38,28 @@ Gerenciador de senhas seguro desenvolvido em Java. Oferece armazenamento criptog
   - Deve mostrar versão 17 ou superior
 - Google Authenticator no celular (ou outro app 2FA compatível)
 
+### Como Obter o Código
+
+1. Clone o repositório ou baixe o código:
+```bash
+git clone https://github.com/Victormsfalcao/PasswordManager.git
+cd PasswordManager
+```
+
+2. Ou baixe o ZIP do projeto:
+   - Acesse: https://github.com/Victormsfalcao/PasswordManager
+   - Clique em "Code" -> "Download ZIP"
+   - Extraia em uma pasta de sua preferência
+
 ### Como Executar (Forma Simples)
 
 #### Windows:
-1. Extraia o arquivo ZIP em uma pasta
+1. Extraia o arquivo ZIP em uma pasta (se baixou o ZIP)
 2. Dê duplo clique no arquivo `run.bat`
 3. Siga as instruções na tela
 
 #### Linux/Mac:
-1. Extraia o arquivo ZIP em uma pasta
+1. Extraia o arquivo ZIP em uma pasta (se baixou o ZIP)
 2. Abra o terminal na pasta do projeto
 3. Execute: `chmod +x run.sh`
 4. Execute: `./run.sh`
